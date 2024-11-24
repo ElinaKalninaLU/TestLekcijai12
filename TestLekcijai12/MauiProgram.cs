@@ -22,7 +22,9 @@ namespace TestLekcijai12
 
             builder.Configuration.AddConfiguration(config);
             builder.Services.AddSingleton<IConfiguration>(config);
+            builder.Services.AddSingleton<ViewModel.RectangleViewModel>();
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<RectanglePage>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

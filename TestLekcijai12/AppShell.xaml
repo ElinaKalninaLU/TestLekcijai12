@@ -8,12 +8,13 @@
     Title="TestLekcijai12">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <ShellContent
       Title="RectanglePage"
       ContentTemplate="{DataTemplate local:RectanglePage}"
       Route="RectanglePage" />
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
 
 </Shell>
