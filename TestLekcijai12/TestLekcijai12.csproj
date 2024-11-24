@@ -65,7 +65,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\CommonClasses\CommonClasses.csproj" />
 	  <ProjectReference Include="..\DBClasses\DBClasses.csproj" />
+	  <ProjectReference Include="..\SQLiteClasses\SQLiteClasses.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

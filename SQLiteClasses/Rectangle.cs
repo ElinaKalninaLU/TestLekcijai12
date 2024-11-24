@@ -1,11 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SQLite;
 using CommonClasses;
 
-namespace DBClasses
+namespace SQLiteClasses
 {
-    public class Rectangle :IRectangle
+    public class Rectangle : IRectangle
     {
-        [Key]
+        [PrimaryKey, AutoIncrement]
+
         public int ID { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }

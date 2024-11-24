@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using DBClasses;
+using SQLiteClasses;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -14,14 +14,14 @@ using CommonClasses;
 namespace TestLekcijai12.ViewModel
 {
     [ObservableObject]
-    public partial class RectangleViewModel : IRectangleViewModel
+    public partial class RectangleSQLiteViewModel: IRectangleViewModel
     {
         private IConfiguration _configuration { get; set; }
-        private DBManager _dBManager { get; set; }
-        public RectangleViewModel(IConfiguration configuration):base()
+        private DBClass _dBManager { get; set; }
+        public RectangleSQLiteViewModel(IConfiguration configuration):base()
         {
             _configuration = configuration;
-            _dBManager = new DBManager(_configuration["ConnectionStrings:MyDB"]);
+            _dBManager = new DBClass();
             refresh();
         }
 
@@ -38,7 +38,7 @@ namespace TestLekcijai12.ViewModel
         private string submitButtonText = "Add Rectangle";
 
         [ObservableProperty]
-        private ObservableCollection<IRectangle> rectangleList= new ObservableCollection<IRectangle>() { new DBClasses.Rectangle() { Height=1, Width=1} };
+        private ObservableCollection<IRectangle> rectangleList= new ObservableCollection<IRectangle>() { new Rectangle() { Height=1, Width=1} };
 
         [ObservableProperty]
         private IRectangle selectedRectangle;
@@ -61,7 +61,8 @@ namespace TestLekcijai12.ViewModel
             {
                 UpdateRectangle.Height = Height;
                 UpdateRectangle.Width = Width;
-                _dBManager.Update();
+                //atšķirība no koda
+                _dBManager.UpdateRectangle(UpdateRectangle);
                 Info = "Rectangle updated!";
                 endEdit();
             }

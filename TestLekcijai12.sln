@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLekcijai12", "TestLekci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBClasses", "DBClasses\DBClasses.csproj", "{A45AB495-4B42-44A5-BA53-D99624268601}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteClasses", "SQLiteClasses\SQLiteClasses.csproj", "{F78B5E6E-4785-431E-A95E-35E5D905432E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonClasses", "CommonClasses\CommonClasses.csproj", "{086C5F54-DE3D-46F9-9DE2-97FBAAB4E179}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{A45AB495-4B42-44A5-BA53-D99624268601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A45AB495-4B42-44A5-BA53-D99624268601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A45AB495-4B42-44A5-BA53-D99624268601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78B5E6E-4785-431E-A95E-35E5D905432E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78B5E6E-4785-431E-A95E-35E5D905432E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78B5E6E-4785-431E-A95E-35E5D905432E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78B5E6E-4785-431E-A95E-35E5D905432E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086C5F54-DE3D-46F9-9DE2-97FBAAB4E179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086C5F54-DE3D-46F9-9DE2-97FBAAB4E179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086C5F54-DE3D-46F9-9DE2-97FBAAB4E179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086C5F54-DE3D-46F9-9DE2-97FBAAB4E179}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TestLekcijai12.ViewModel"
              x:Class="TestLekcijai12.RectanglePage"
-             
+             x:Name="RootPage"
              Title="RectanglePage">
     <ScrollView>
     <VerticalStackLayout>
@@ -17,9 +17,11 @@
         <Label      Text="{Binding Info}"></Label>
              <ListView ItemsSource="{Binding RectangleList}" SelectedItem="{Binding SelectedRectangle}">
                 <ListView.ItemTemplate>
+                    <!--Command="{Binding Source={RelativeSource AncestorType={x:Type local:RectangleViewModel}}, Path=itemSelectedCommand}"-->
                     <DataTemplate>
                         <TextCell Text="{Binding}" 
-                                  Command="{Binding Source={RelativeSource AncestorType={x:Type local:RectangleViewModel}}, Path=itemSelectedCommand}" CommandParameter="{Binding}"></TextCell>
+                                  Command="{Binding Source={x:Reference RootPage}, Path=BindingContext.itemSelectedCommand}"
+                                  CommandParameter="{Binding}"></TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
         </ListView>
