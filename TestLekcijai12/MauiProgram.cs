@@ -22,8 +22,8 @@ namespace TestLekcijai12
 
             builder.Configuration.AddConfiguration(config);
             builder.Services.AddSingleton<IConfiguration>(config);
-            builder.Services.AddSingleton<ViewModel.RectangleViewModel>();
-            builder.Services.AddSingleton<ViewModel.RectangleSQLiteViewModel>();
+            builder.Services.AddTransient<ViewModel.IRectangleViewModel, ViewModel.RectangleViewModel>();
+//            builder.Services.AddTransient<ViewModel.IRectangleViewModel,ViewModel.RectangleSQLiteViewModel>();
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<RectanglePage>();
 #if DEBUG
