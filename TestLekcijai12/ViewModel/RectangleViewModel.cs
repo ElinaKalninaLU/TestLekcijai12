@@ -42,6 +42,9 @@ namespace TestLekcijai12.ViewModel
         [ObservableProperty]
         private DBClasses.Rectangle _selectedRectangle;
 
+        [ObservableProperty]
+        private bool isDeleteVisible = false;
+
         private Rectangle UpdateRectangle = null;
 
         [RelayCommand]
@@ -58,10 +61,8 @@ namespace TestLekcijai12.ViewModel
                 UpdateRectangle.Height = Height;
                 UpdateRectangle.Width = Width;
                 _dBManager.Update();
-                UpdateRectangle = null;
-                _selectedRectangle = null;
                 Info = "Rectangle updated!";
-                SubmitButtonText = "Add Rectangle";
+                endEdit();
             }
             refresh();
         }
@@ -79,23 +80,39 @@ namespace TestLekcijai12.ViewModel
         [RelayCommand]
         private void delete()
         {
-            if (_selectedRectangle != null)
+            if (UpdateRectangle != null)
             {
-                _dBManager.RemoveRectangle( _selectedRectangle );
+                
+                _dBManager.RemoveRectangle(UpdateRectangle);
                 Info = "Rectangle deleted!";
+                endEdit();
                 refresh();
             }
         }
 
+        private void endEdit()
+        {
+            UpdateRectangle = null;
+            _selectedRectangle = null;
+            SubmitButtonText = "Add Rectangle";
+            IsDeleteVisible = false;
+        }
+
+        private void startEdit()
+        {
+            SubmitButtonText = "Update Rectangle";
+            IsDeleteVisible = true;
+        }
+
         [RelayCommand]
-        private void edit()
+        private void itemSelected()
         {
             if (_selectedRectangle != null)
             {
                 Width = _selectedRectangle.Width;
                 Height = _selectedRectangle.Height;
-                SubmitButtonText = "Update Rectangle";
                 UpdateRectangle = _selectedRectangle;
+                startEdit();
             }
         }
     }
