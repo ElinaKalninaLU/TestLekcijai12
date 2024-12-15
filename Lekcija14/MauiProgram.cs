@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace TestLekcijai12
+namespace Lekcija14
 {
     public static class MauiProgram
     {
@@ -15,18 +15,13 @@ namespace TestLekcijai12
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
-            // Install-Package Microsoft.Extensions.Configuration.Json
             var config = new ConfigurationBuilder()
-        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-        .Build();
-
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
             builder.Configuration.AddConfiguration(config);
             builder.Services.AddSingleton<IConfiguration>(config);
-        //    builder.Services.AddTransient<ViewModel.IRectangleViewModel, ViewModel.RectangleViewModel>();
-          builder.Services.AddTransient<ViewModel.IRectangleViewModel,ViewModel.RectangleSQLiteViewModel>();
             builder.Services.AddTransient<MainPage>();
-            builder.Services.AddTransient<RectanglePage>();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

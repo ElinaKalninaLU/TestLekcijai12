@@ -13,6 +13,7 @@ using CommonClasses;
 
 namespace TestLekcijai12.ViewModel
 {
+    //Install-Package CommunityToolkit.Mvvm
     [ObservableObject]
     public partial class RectangleViewModel : IRectangleViewModel
     {
